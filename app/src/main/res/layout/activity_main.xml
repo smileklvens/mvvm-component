@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch.Vertical">
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/mViewPage"
+        style="@style/MatchMatch" />
+
+    <LinearLayout
+        android:id="@+id/bottom_menu_bar"
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/common_white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <RelativeLayout
+            android:id="@+id/bottomMenuHomeRl"
+            style="@style/main_ationbar_relativeLayout">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/bottomMenuHomeLav"
+                style="@style/main_ationbar_imageView" />
+
+
+            <TextView
+                android:id="@+id/bottomMenuHomeTv"
+                style="@style/main_ationbar_textView"
+                android:layout_below="@id/bottomMenuHomeLav"
+                android:text="@string/news_news" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bottomMenuNewsRl"
+            style="@style/main_ationbar_relativeLayout">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/bottomMenuNewsLAV"
+                style="@style/main_ationbar_imageView" />
+
+
+            <TextView
+                android:id="@+id/bottomMenuNewsTV"
+                style="@style/main_ationbar_textView"
+                android:layout_below="@id/bottomMenuNewsLAV"
+                android:text="@string/schedule_schedule" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/bottomMenuWorkBenchRlBottom"
+            style="@style/main_ationbar_relativeLayout">
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/bottomMenuScheduleRl"
+            style="@style/main_ationbar_relativeLayout">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/bottomMenuScheduleLAV"
+                style="@style/main_ationbar_imageView" />
+
+
+            <TextView
+                android:id="@+id/bottomMenuScheduleTV"
+                style="@style/main_ationbar_textView"
+                android:layout_below="@id/bottomMenuScheduleLAV"
+                android:text="@string/schedule_contacts" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/bottomMenuMeRl"
+            style="@style/main_ationbar_relativeLayout">
+
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/bottomMenuMeRlLAV"
+                style="@style/main_ationbar_imageView" />
+
+
+            <TextView
+                android:id="@+id/bottomMenuMeRlTV"
+                style="@style/main_ationbar_textView"
+                android:layout_below="@id/bottomMenuMeRlLAV"
+                android:text="@string/me_me" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/bottomMenuWorkBenchRl"
+        android:layout_width="44dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true">
+
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/bottomMenuWorkBenchLAV"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_workbench_icom_list"
+            app:lottie_loop="false"
+            app:lottie_progress="100"
+            app:lottie_scale="2" />
+
+
+        <TextView
+            android:id="@+id/bottomMenuWorkBenchTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/bottomMenuWorkBenchLAV"
+            android:layout_centerHorizontal="true"
+            android:text="@string/workbench_workbench"
+            android:textColor="@color/text_bottom_ationbar_select"
+            android:textSize="@dimen/text_size_12_dp" />
+
+    </RelativeLayout>
+
+    <!--    <com.ikang.staffapp.widget.BottomNavBar-->
+    <!--        android:id="@+id/mBottomNavBar"-->
+    <!--        style="@style/MatchWrap"-->
+    <!--        android:layout_gravity="bottom" />-->
+</RelativeLayout>

@@ -1,0 +1,31 @@
+apply {
+    from "${rootDir.path}/config/util.gradle"
+}
+
+android {
+    //统一资源前缀，规范资源引用
+    resourcePrefix "mvi"
+}
+
+dependencies {
+    implementation files('libs/tbs_sdk_thirdapp_v4.3.0.1148_43697_sharewithdownloadwithfile_withoutGame_obfs_20190805_175505.jar')
+
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    //androidx
+    api androidxs
+    //network
+    api network
+    //    api libs.material_dialogs_core
+    //    api libs.material_dialogs_lifecycle
+    api libs.BRVAH
+    api libs.lottie
+    //刷新框架 1.1.0 androidx 版本
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0'
+    api 'androidx.multidex:multidex:2.0.1'
+    api 'com.ikang.libglide:libglide:1.1.2'
+    api 'com.ikang.libeasyshow:lib.easyshow:1.0.4'
+
+
+    implementation project(path: ':providerservice')
+
+}

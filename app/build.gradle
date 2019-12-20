@@ -1,0 +1,52 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+android {
+    compileSdkVersion build_version.compileSdkVersion
+
+    defaultConfig {
+        applicationId "com.ikang.staffapp"
+        minSdkVersion build_version.minSdkVersion
+        targetSdkVersion build_version.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled true
+    }
+
+    // Required for AR because it includes a library built with Java 8
+    compileOptions {
+        sourceCompatibility 1.8
+        targetCompatibility 1.8
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+}
+
+dependencies {
+    implementation project(path: ':libmvi')
+    implementation project(path: ':providerservice')
+
+    if (!isBuildModule.toBoolean()) {
+        implementation project(path: ':loginmodule')
+        implementation project(path: ':newsmodule')
+        implementation project(path: ':schedulemodule')
+        implementation project(path: ':workbenchmodule')
+        implementation project(path: ':contactsmodule')
+        implementation project(path: ':mymodule')
+    }
+    //底部导航
+    api 'com.ashokvarma.android:bottom-navigation-bar:2.0.2'
+}

@@ -1,0 +1,18 @@
+apply {
+    from "${rootDir.path}/config/module.gradle"
+}
+
+android {
+    defaultConfig {
+        //如果是独立模块，则使用当前组件的包名-通讯录
+        if (isBuildModule.toBoolean()) {
+            applicationId "com.ikang.contacts"
+        }
+    }
+    //统一资源前缀，规范资源引用
+    resourcePrefix "contacts"
+}
+
+dependencies {
+    implementation project(path: ':libutils')
+}

@@ -1,0 +1,8 @@
+<resources>
+    <string name="workbench_app_name">workbench</string>
+
+    <string name="workbench_url">https://avatar.csdn.net/4/0/7/1_zhuhai__yizhi.jpg</string>
+    <string name="workbench_nav_to_x5">nav_to_x5</string>
+    <string name="workbench_api">调接口</string>
+
+</resources>

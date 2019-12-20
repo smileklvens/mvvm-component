@@ -1,0 +1,22 @@
+apply {
+    from "${rootDir.path}/config/util.gradle"
+}
+
+android {
+    //统一资源前缀，规范资源引用
+    resourcePrefix "providerService"
+}
+
+
+dependencies {
+    api 'com.alibaba:arouter-api:1.5.0'
+    kapt 'com.alibaba:arouter-compiler:1.2.2'
+
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.annotation:annotation:1.1.0'
+    implementation 'androidx.core:core:1.1.0'
+}

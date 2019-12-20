@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="T">
+
+        <attr name="isShowSearchView" format="boolean"/>
+        <attr name="rightButtonIcon_left" format="reference"/>
+        <attr name="rightButtonText_left" format="string|reference"/>
+        <attr name="rightButtonIcon_right" format="reference"/>
+        <attr name="rightButtonText_right" format="string|reference"/>
+        <attr name="leftButtonIcon" format="reference"/>
+        <attr name="leftButtonText" format="string|reference"/>
+
+    </declare-styleable>
+
+
+    <!-- TitleBar -->
+    <declare-styleable name="TitleBar">
+        <attr name="background"/>
+        <attr name="title"/>
+        <attr name="leftImg" format="reference" />
+        <attr name="rightImg" format="reference" />
+        <attr name="rightText" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="ClearEditText">
+        <!--提示文字-->
+        <attr name="etHint" format="reference"/>
+        <!--是否为密码-->
+        <attr name="etPwd" format="boolean"/>
+        <!--是否为数字-->
+        <attr name="etNumber" format="boolean"/>
+        <!--是否为密码&数字-->
+        <attr name="pwdAndNumber" format="boolean"/>
+        <!--最大字数-->
+        <attr name="etMaxLength" format="integer"/>
+        <!--是否需要格式化手机号-->
+        <attr name="etIsFormatPhone" format="boolean"/>
+        <!--是否需要显示密码小眼睛-->
+        <attr name="etIsShowEye" format="boolean"/>
+    </declare-styleable>
+</resources>
