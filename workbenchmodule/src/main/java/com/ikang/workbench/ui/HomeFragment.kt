@@ -20,7 +20,7 @@ import com.stx.xhb.androidx.XBanner
 import kotlinx.android.synthetic.main.fragment_home.*
 
 /*
-    主界面  Bind 写法
+    主界面  Bind 写法   工作台
  */
 @Suppress("UNCHECKED_CAST")
 class HomeFragment : BaseRefreshMoreFragment<HomeViewModel, FragmentHomeBinding>() {
@@ -37,36 +37,7 @@ class HomeFragment : BaseRefreshMoreFragment<HomeViewModel, FragmentHomeBinding>
 
 
     override fun initView(savedInstanceState: Bundle?) {
-        bindSwipeRecycler(
-            mSmartRefreshLayout,
-            rv_home,
-            mAdapter as BaseQuickAdapter<*, BaseViewHolder>
-        )
-        rv_home.addItemDecoration(DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL))
 
-        mAdapter.apply {
-            //banner
-            banner = XBanner(context)
-            banner.minimumWidth = android.view.ViewGroup.LayoutParams.MATCH_PARENT
-            banner.layoutParams =
-                android.view.ViewGroup.LayoutParams(
-                    android.view.ViewGroup.LayoutParams.MATCH_PARENT,
-                    360
-                )
-            banner.loadImage(GlideImageLoader())
-            addHeaderView(banner)
-        }
-
-        observe(viewModel.mBanners) {
-            banner.setBannerData(it)
-        }
-
-        observe(viewModel.projectData) {
-            stopRefresh()
-            if (it.curPage == 1) mAdapter.setNewData(it.datas)
-            else mAdapter.addData(it.datas)
-            page = it.curPage
-        }
     }
 
 
@@ -83,6 +54,38 @@ class HomeFragment : BaseRefreshMoreFragment<HomeViewModel, FragmentHomeBinding>
     }
 
     override fun lazyLoadData() {
+
+        bindSwipeRecycler(
+                mSmartRefreshLayout,
+                rv_home,
+                mAdapter as BaseQuickAdapter<*, BaseViewHolder>
+        )
+        rv_home.addItemDecoration(DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL))
+
+        mAdapter.apply {
+            //banner
+            banner = XBanner(context)
+            banner.minimumWidth = android.view.ViewGroup.LayoutParams.MATCH_PARENT
+            banner.layoutParams =
+                    android.view.ViewGroup.LayoutParams(
+                            android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+                            360
+                    )
+            banner.loadImage(GlideImageLoader())
+            addHeaderView(banner)
+        }
+
+        observe(viewModel.mBanners) {
+            banner.setBannerData(it)
+        }
+
+        observe(viewModel.projectData) {
+            stopRefresh()
+            if (it.curPage == 1) mAdapter.setNewData(it.datas)
+            else mAdapter.addData(it.datas)
+            page = it.curPage
+        }
+
         viewModel.getHomeList(page)
         viewModel.getBanner()
     }

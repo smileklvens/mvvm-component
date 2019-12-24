@@ -34,7 +34,7 @@ class PersonalCenterActivity : BaseRefreshMoreActivity<PersonalCenterModel, View
         )
         meRecyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
 
-        val inflate = LayoutInflater.from(this).inflate(R.layout.layout_personal_header, null, false)
+        val inflate = LayoutInflater.from(this).inflate(R.layout.layout_personal_header, null)
         mAdapter.addHeaderView(inflate)
 
         observe(viewModel.meListBean) {

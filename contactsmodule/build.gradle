@@ -1,6 +1,8 @@
 apply {
     from "${rootDir.path}/config/module.gradle"
 }
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
 
 android {
     defaultConfig {
@@ -15,4 +17,6 @@ android {
 
 dependencies {
     implementation project(path: ':libutils')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

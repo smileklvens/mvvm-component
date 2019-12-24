@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="itemData"
+            type="com.ikang.data.entity.NewsListBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="78dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/newsSystemImgIV"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
+            android:layout_marginLeft="16dp"
+            android:background="@color/basic_color_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/newsSystemTitleTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="系统消息"
+            android:textColor="@color/text_light_dark"
+            android:textSize="@dimen/text_size_16_dp"
+            app:layout_constraintLeft_toRightOf="@+id/newsSystemImgIV"
+            app:layout_constraintTop_toTopOf="@+id/newsSystemImgIV" />
+
+        <TextView
+            android:id="@+id/newsSystemContentTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="系统升级提醒"
+            android:textSize="@dimen/text_size_12_dp"
+            app:layout_constraintBottom_toBottomOf="@+id/newsSystemImgIV"
+            app:layout_constraintLeft_toRightOf="@id/newsSystemImgIV"
+            app:layout_constraintTop_toBottomOf="@+id/newsSystemTitleTV" />
+
+        <TextView
+            android:id="@+id/newsSystemTimeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:text="14:57"
+            android:textSize="@dimen/text_size_12_dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/newsSystemImgIV" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

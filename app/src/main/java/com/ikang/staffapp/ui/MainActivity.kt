@@ -9,8 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentPagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.airbnb.lottie.LottieAnimationView
+import com.ikang.contacts.ui.ContactsFragmet
 import com.ikang.libmvi.base.NoViewModel
 import com.ikang.libmvi.base.ui.activity.BaseActivity
+import com.ikang.libmvi.util.XLog
+import com.ikang.newsmodule.NewsFragment
+import com.ikang.schedulemodule.ScheduleFragment
 import com.ikang.staffapp.R
 import com.kotlin.mall.ui.fragment.HomeFragment
 import com.kotlin.mall.ui.fragment.MeFragment
@@ -34,8 +38,14 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>(), View.OnClickL
 
     //Fragment 栈管理
     private val mStack = Stack<Fragment>()
+    //消息Fragment
+    private val mNewsFragment by lazy { NewsFragment() }
+    //"日程"Fragment
+    private val mScheduleFragment by lazy { ScheduleFragment() }
     //主界面Fragment
     private val mHomeFragment by lazy { HomeFragment.newInstance() }
+    //"通讯录"Fragment
+    private val mContactsFragment by lazy { ContactsFragmet() }
     //"我的"Fragment
     private val mMeFragment by lazy { MeFragment() }
 
@@ -51,7 +61,10 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>(), View.OnClickL
      初始化Fragment栈管理
   */
     private fun initFragment() {
+        mStack.add(mNewsFragment)
+        mStack.add(mScheduleFragment)
         mStack.add(mHomeFragment)
+        mStack.add(mContactsFragment)
         mStack.add(mMeFragment)
     }
 
@@ -77,7 +90,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>(), View.OnClickL
 
         })
         mViewPage.currentItem = 0
-
+        mViewPage.offscreenPageLimit = mStack.size
     }
 
 

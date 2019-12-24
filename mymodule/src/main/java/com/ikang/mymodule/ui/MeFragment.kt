@@ -12,6 +12,7 @@ import com.ikang.libmvi.base.ui.fragment.BaseRefreshMoreFragment
 import com.ikang.libmvi.config.StaticDemoActivity.Companion.ME_COLLECT
 import com.ikang.libmvi.config.StaticDemoActivity.Companion.ME_PROCEDURE
 import com.ikang.libmvi.config.StaticDemoActivity.Companion.ME_SETTING
+import com.ikang.libmvi.util.XLog
 import com.ikang.libmvi.util.XToast
 import com.ikang.libmvi.util.ext.click
 import com.ikang.libmvi.util.ext.observe
@@ -21,7 +22,6 @@ import com.ikang.staffapp.ui.fragment.me.MeViewModel
 import com.ikang.staffapp.ui.fragment.me.personalcenter.PersonalCenterActivity
 import kotlinx.android.synthetic.main.fragment_me.*
 import kotlinx.android.synthetic.main.layout_me_header.view.*
-
 
 
 /*
@@ -35,6 +35,9 @@ class MeFragment : BaseRefreshMoreFragment<MeViewModel, ViewDataBinding>() {
     override fun layoutId(): Int = R.layout.fragment_me
 
     override fun initView(savedInstanceState: Bundle?) {
+    }
+
+    override fun lazyLoadData() {
         bindSwipeRecycler(
                 meSmartRefreshLayout,
                 meRecyclerView,
@@ -47,7 +50,7 @@ class MeFragment : BaseRefreshMoreFragment<MeViewModel, ViewDataBinding>() {
 
 //        inflate.meHeaderNameTv  = LoginServiceControl.accountService.accountId
 
-                inflate.meHeadercl.click {
+        inflate.meHeadercl.click {
             val intent = Intent(context, PersonalCenterActivity::class.java)
             startActivity(intent)
         }
@@ -62,9 +65,7 @@ class MeFragment : BaseRefreshMoreFragment<MeViewModel, ViewDataBinding>() {
 
         meSmartRefreshLayout.setEnableLoadMore(false)
         meSmartRefreshLayout.setEnableRefresh(false)
-    }
 
-    override fun lazyLoadData() {
         viewModel.getMeListBean(page)
     }
 
@@ -73,18 +74,18 @@ class MeFragment : BaseRefreshMoreFragment<MeViewModel, ViewDataBinding>() {
             view: View,
             position: Int
     ) {
-        when((mAdapter.data.get(position)).type){
+        when ((mAdapter.data.get(position)).type) {
             //收藏
             ME_COLLECT -> {
-                context?.let { XToast.show(it,"收藏") }
+                context?.let { XToast.show(it, "收藏") }
             }
             //我得行程
             ME_PROCEDURE -> {
-                context?.let { XToast.show(it,"我得行程") }
+                context?.let { XToast.show(it, "我得行程") }
             }
             //设置
             ME_SETTING -> {
-                context?.let { XToast.show(it,"设置") }
+                context?.let { XToast.show(it, "设置") }
 //                val intent = Intent(context, LoginActivity::class.java)
 //                startActivity(intent)
             }
