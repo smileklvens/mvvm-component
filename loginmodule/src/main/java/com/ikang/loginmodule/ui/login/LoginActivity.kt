@@ -35,7 +35,7 @@ import org.jetbrains.anko.toast
 
 //@Route(path = RouterActPath.Login.NAV_LOGIN)
 @Route(path = RouterActPath.Login.NAV_LOGIN)
-class LoginActivity : BaseActivity<NoViewModel, ActivityLoginBinding>(), EdittextClearCombination.ITextStandardListener  {
+class LoginActivity : BaseActivity<LoginViewModule, ActivityLoginBinding>(), EdittextClearCombination.ITextStandardListener  {
 
     //当前手机号是否合法
     private var telIsStandard = false
@@ -56,6 +56,7 @@ class LoginActivity : BaseActivity<NoViewModel, ActivityLoginBinding>(), Edittex
 
         loginBtnLogin.click {
             if (telIsStandard){
+                viewModel.doubleCheckHttps()
                 toast("点击登录")
 
             }
@@ -63,7 +64,7 @@ class LoginActivity : BaseActivity<NoViewModel, ActivityLoginBinding>(), Edittex
     }
 
     override fun initData() {
-
+        viewModel.getLoginToken()
     }
 
     //当输入手机号格式回调

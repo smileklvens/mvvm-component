@@ -1,4 +1,4 @@
-package com.ikang.staffapp.http.interceptor
+package com.ikang.libmvi.network.interceptor
 
 
 import com.ikang.libmvi.base.BaseApp

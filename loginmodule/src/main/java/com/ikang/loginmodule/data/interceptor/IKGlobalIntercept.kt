@@ -1,10 +1,12 @@
 package com.ikang.staffapp.http.interceptor
 
 import android.text.TextUtils
-import com.aleyn.mvvm.network.ResERROR
-import com.aleyn.mvvm.network.ResponseThrowable
+
 import com.google.gson.Gson
 import com.ikang.libmvi.base.BaseResult
+import com.ikang.libmvi.network.ResERROR
+import com.ikang.libmvi.network.ResponseThrowable
+import com.ikang.libmvi.network.interceptor.ResponseBodyInterceptor
 import com.ikang.staffapp.data.entity.OauthResp
 import okhttp3.Response
 import okhttp3.ResponseBody.Companion.toResponseBody

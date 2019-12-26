@@ -1,4 +1,4 @@
-package com.ikang.staffapp.http.interceptor
+package com.ikang.libmvi.network.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Request

@@ -7,8 +7,8 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.viewModelScope
 import com.aleyn.mvvm.event.Message
 import com.aleyn.mvvm.event.SingleLiveEvent
-import com.aleyn.mvvm.network.ExceptionHandle
-import com.aleyn.mvvm.network.ResponseThrowable
+import com.ikang.libmvi.network.ExceptionHandle
+import com.ikang.libmvi.network.ResponseThrowable
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -42,10 +42,10 @@ open class BaseViewModel : AndroidViewModel(BaseApp.instance as Application), Li
      * @param isShowDialog 是否显示加载框
      */
     fun launch(
-        block: suspend CoroutineScope.() -> Unit,
-        error: suspend CoroutineScope.(ResponseThrowable) -> Unit = {},
-        complete: suspend CoroutineScope.() -> Unit = {},
-        isShowDialog: Boolean = true
+            block: suspend CoroutineScope.() -> Unit,
+            error: suspend CoroutineScope.(ResponseThrowable) -> Unit = {},
+            complete: suspend CoroutineScope.() -> Unit = {},
+            isShowDialog: Boolean = true
     ) {
         if (isShowDialog) defUI.showDialog.call()
         launchUI {

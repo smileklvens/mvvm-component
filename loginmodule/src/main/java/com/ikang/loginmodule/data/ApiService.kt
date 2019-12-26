@@ -2,10 +2,8 @@ package com.ikang.staffapp.http
 
 import com.ikang.libmvi.base.BaseResult
 import com.ikang.staffapp.data.entity.OauthResp
-import retrofit2.http.FieldMap
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.GET
-import retrofit2.http.POST
+import okhttp3.ResponseBody
+import retrofit2.http.*
 
 
 /**
@@ -26,4 +24,8 @@ interface ApiService {
     @GET("/api/login")
     suspend fun getLoginSession(@FieldMap formMap: Map<String, String>): BaseResult<OauthResp>
 
+
+    /*双向认证*/
+    @GET
+    suspend fun doubleCheckHttps(@Url  fullUrl:String): ResponseBody
 }

@@ -1,4 +1,4 @@
-package com.aleyn.mvvm.network.interceptor
+package com.ikang.libmvi.network.interceptor
 
 import okhttp3.Interceptor
 import okhttp3.Response

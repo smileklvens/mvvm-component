@@ -17,9 +17,9 @@ class LoginViewModule : BaseViewModel() {
 
     val service by lazy {
         RetrofitFactory.getService(
-            ApiService::class.java,
-            BASE_URL,
-            IKGlobalIntercept()
+                ApiService::class.java,
+                BASE_URL,
+                IKGlobalIntercept(),true
         )
     }
 
@@ -27,6 +27,9 @@ class LoginViewModule : BaseViewModel() {
     var mComicDetailResponse = _mComicDetailResponse
 
 
+    /**
+     * 测试登陆获取token
+     */
     fun getLoginToken() {
 
         val params = mutableMapOf<String, String>()
@@ -62,4 +65,14 @@ class LoginViewModule : BaseViewModel() {
             _mComicDetailResponse.value = it
         })
     }
+
+
+
+
+    fun doubleCheckHttps() {
+        launch({
+            val loginSession = service.doubleCheckHttps("https://blog.tttsss.com/beta")
+        })
+    }
+
 }

@@ -1,8 +1,10 @@
-package com.aleyn.mvvm.network
+package com.ikang.libmvi.network
 
 import android.net.ParseException
 import com.google.gson.JsonParseException
 import com.google.gson.stream.MalformedJsonException
+import com.ikang.libmvi.network.ResERROR
+import com.ikang.libmvi.network.ResponseThrowable
 import org.apache.http.conn.ConnectTimeoutException
 import org.json.JSONException
 import retrofit2.HttpException
