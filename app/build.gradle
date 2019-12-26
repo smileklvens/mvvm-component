@@ -3,6 +3,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+
+apply plugin: 'kotlin-noarg'
+apply plugin: 'kotlin-allopen'
 android {
     compileSdkVersion build_version.compileSdkVersion
 
@@ -10,8 +13,8 @@ android {
         applicationId "com.ikang.staffapp"
         minSdkVersion build_version.minSdkVersion
         targetSdkVersion build_version.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode build_version.versionCode
+        versionName build_version.versionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -47,6 +50,12 @@ dependencies {
         implementation project(path: ':contactsmodule')
         implementation project(path: ':mymodule')
     }
-    //底部导航
-    api 'com.ashokvarma.android:bottom-navigation-bar:2.0.2'
+}
+
+noArg {
+    annotation("com.ikang.staffapp.Poko")//"com.ikang.staffapp包名"
+}
+
+allOpen {
+    annotation("com.ikang.staffapp.Poko")
 }

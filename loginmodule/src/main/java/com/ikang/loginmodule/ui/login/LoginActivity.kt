@@ -26,6 +26,7 @@ import com.ikang.loginmodule.databinding.ActivityLoginBinding
 import com.ikang.loginmodule.ui.widget.EdittextClearCombination
 import com.ikang.providerservice.router.RouterActPath
 import kotlinx.android.synthetic.main.activity_login.*
+import org.jetbrains.anko.toast
 
 
 /**
@@ -56,6 +57,7 @@ class LoginActivity : BaseActivity<NoViewModel, ActivityLoginBinding>(), Edittex
         loginBtnLogin.click {
             if (telIsStandard){
                 toast("点击登录")
+
             }
         }
     }

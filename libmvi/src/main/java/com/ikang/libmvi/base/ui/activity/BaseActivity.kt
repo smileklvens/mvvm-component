@@ -20,6 +20,7 @@ import com.ikang.libmvi.base.ui.fragment.IKToolbar
 import com.ikang.libmvi.util.StatusBarUtil
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.layout_loading_view.*
+import org.jetbrains.anko.toast
 import java.lang.reflect.ParameterizedType
 
 
@@ -214,9 +215,9 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
     }
 
 
-    fun toast(msg: String) {
-        msg.let { Toast.makeText(BaseApp.instance, msg, Toast.LENGTH_LONG).show() }
-    }
+//    fun toast(msg: String) {
+//        msg.let { Toast.makeText(BaseApp.instance, msg, Toast.LENGTH_LONG).show() }
+//    }
 
 
 }
