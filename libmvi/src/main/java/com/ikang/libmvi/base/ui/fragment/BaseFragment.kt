@@ -16,8 +16,8 @@ import com.aleyn.mvvm.event.Message
 import com.ikang.libmvi.base.BaseViewModel
 import com.ikang.libmvi.base.ui.IBaseView
 import com.ikang.libmvi.base.ui.activity.BaseActivity
+import org.jetbrains.anko.toast
 import java.lang.reflect.ParameterizedType
-
 /**
  * @author IK-zhulk
  * @version 1.0.0
@@ -97,7 +97,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment
             hideLoading()
         })
         viewModel.defUI.toastEvent.observe(viewLifecycleOwner, Observer {
-            toast(it)
+            requireContext().toast(it)
         })
         viewModel.defUI.msgEvent.observe(viewLifecycleOwner, Observer {
             handleEvent(it)
@@ -117,9 +117,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment
         baseActivity = null
     }
 
-    fun toast(str: String) {
-        baseActivity?.toast(str)
-    }
+
 
 
     override fun showLoading() {

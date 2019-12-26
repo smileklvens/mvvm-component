@@ -17,6 +17,7 @@ import com.ikang.libmvi.base.ui.activity.BaseActivity
 import com.tencent.smtt.sdk.WebView
 import kotlinx.android.synthetic.main.activity_webview_tbs.*
 import kotlinx.android.synthetic.main.layout_simple_toolbar.view.*
+import org.jetbrains.anko.toast
 
 
 /**
