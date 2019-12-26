@@ -73,7 +73,7 @@ object RetrofitFactory {
             retryOnConnectionFailure(true) // 错误重连
             if (useSSL) {
                 val sslParams = HttpsUtils.getSslSocketFactory(BaseApp.instance.getAssets().open("client.bks"), "123456",
-                        BaseApp.instance.getAssets().open("trans.bks"), "123456")
+                        BaseApp.instance.getAssets().open("truststoreca.bks"), "123456")
                 builder.sslSocketFactory(sslParams.sSLSocketFactory, UnSafeTrustManager)
                 builder.hostnameVerifier(HttpsUtils.UnSafeHostnameVerifier)
             }
