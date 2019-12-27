@@ -10,7 +10,7 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowAnimationStyle">@style/default_animation</item>
         <!--全局默认字体大小-->
-        <item name="android:textSize">@dimen/text_middle_size</item>
+        <item name="android:textSize">@dimen/common_text_middle_size</item>
 
     </style>
 
@@ -62,7 +62,7 @@
     <style name="commonItem">
         <item name="android:scrollbars">none</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/dialog_width</item>
+        <item name="android:layout_height">@dimen/common_dialog_width</item>
         <item name="android:background">@drawable/comm_settting_item_selector</item>
     </style>
 
@@ -87,14 +87,14 @@
 
     <!-- 自定义标签字体样式 -->
     <style name="LabelTitleTextStyle">
-        <item name="android:textSize">@dimen/text_middle_size</item>
-        <item name="android:textColor">@color/text_normal</item>
+        <item name="android:textSize">@dimen/common_text_middle_size</item>
+        <item name="android:textColor">@color/common_text_normal</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
     <!-- 自定义标签内容字体样式 -->
     <style name="LabelContentTextStyle" parent="@style/LabelTitleTextStyle">
-        <item name="android:textColor">@color/text_light_dark</item>
+        <item name="android:textColor">@color/common_text_dark</item>
     </style>
     <!-- 横屏按钮样式，带不可用状态 -->
     <!-- 按钮样式-->

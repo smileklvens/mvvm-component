@@ -32,6 +32,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.ikang.libmvi.x5webview.WebX5Util
 import com.ikang.libmvi.x5webview.X5WebViewActivity
+import java.util.*
 
 @BindingAdapter("goneUnless")
 fun goneUnless(view: View, visible: Boolean) {
@@ -52,6 +53,23 @@ fun pageMargin(viewPager: ViewPager, pageMargin: Float) {
 
 @BindingAdapter(value = ["imageUri", "placeholder"], requireAll = false)
 fun imageUri(imageView: ImageView, imageUri: Uri?, placeholder: Drawable?) {
+    when (imageUri) {
+        null -> {
+            Glide.with(imageView)
+                .load(placeholder)
+                .into(imageView)
+        }
+        else -> {
+            Glide.with(imageView)
+                .load(imageUri)
+                .apply(RequestOptions().placeholder(placeholder))
+                .into(imageView)
+        }
+    }
+}
+
+@BindingAdapter(value = ["imageInt", "placeholder"], requireAll = false)
+fun imageInt(imageView: ImageView, imageUri: Int?, placeholder: Drawable?) {
     when (imageUri) {
         null -> {
             Glide.with(imageView)

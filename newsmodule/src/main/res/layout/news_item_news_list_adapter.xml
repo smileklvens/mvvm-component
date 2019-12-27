@@ -6,20 +6,23 @@
 
         <variable
             name="itemData"
-            type="com.ikang.data.entity.NewsListBean" />
+            type="com.ikang.data.entity.NewsListItemBean" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="78dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/common_white">
 
         <ImageView
             android:id="@+id/newsSystemImgIV"
-            android:layout_width="55dp"
-            android:layout_height="55dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="16dp"
-            android:background="@color/basic_color_placeholder"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="23dp"
+            android:background="@color/common_color_placeholder"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -28,21 +31,25 @@
             android:id="@+id/newsSystemTitleTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="系统消息"
-            android:textColor="@color/text_light_dark"
-            android:textSize="@dimen/text_size_16_dp"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="14dp"
+            android:text="@{itemData.nickname}"
+            android:gravity="top"
+            android:textColor="@color/common_text_7C320E"
+            android:textSize="@dimen/common_text_size_16_dp"
             app:layout_constraintLeft_toRightOf="@+id/newsSystemImgIV"
-            app:layout_constraintTop_toTopOf="@+id/newsSystemImgIV" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/newsSystemContentTv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:text="系统升级提醒"
-            android:textSize="@dimen/text_size_12_dp"
-            app:layout_constraintBottom_toBottomOf="@+id/newsSystemImgIV"
+            android:layout_marginLeft="17dp"
+            android:layout_marginTop="2dp"
+            android:gravity="top"
+            android:text="@{itemData.content}"
+            android:textColor="@color/common_text_special"
+            android:textSize="@dimen/common_text_size_13_dp"
             app:layout_constraintLeft_toRightOf="@id/newsSystemImgIV"
             app:layout_constraintTop_toBottomOf="@+id/newsSystemTitleTV" />
 
@@ -51,9 +58,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="10dp"
-            android:text="14:57"
-            android:textSize="@dimen/text_size_12_dp"
+            android:text="@{itemData.time}"
+            android:textColor="@color/common_text_special"
+            android:textSize="@dimen/common_text_size_12_dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/newsSystemImgIV" />
+            app:layout_constraintBottom_toBottomOf="@+id/newsSystemContentTv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

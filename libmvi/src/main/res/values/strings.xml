@@ -5,4 +5,8 @@
 
     <string name="privacy_policy_url" translatable="false">https://www.baidu.com/</string>
 
+    <string name="str_news">消息</string>
+
+    <string name="str_me">我的</string>
+    <string name="me_common_tools">常用工具</string>
 </resources>

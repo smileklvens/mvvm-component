@@ -52,7 +52,7 @@ class LoginActivity : BaseActivity<LoginViewModule, ActivityLoginBinding>(), Edi
 //        setToolBar("ff")
 
         //手机格式化回调监听
-        loginPhoneNumberEdt.setTextStandardListener(this)
+//        loginPhoneNumberEdt.setTextStandardListener(this)
 
         loginBtnLogin.click {
             if (telIsStandard){

@@ -16,17 +16,18 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="52dp"
+        android:background="@color/common_white"
         android:orientation="vertical">
 
 
         <ImageView
             android:id="@+id/meListImageIv"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="20dp"
-            android:background="@color/basic_color_placeholder"
-            app:imageUrl="@{itemData.imgUrl}"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="16dp"
+            android:scaleType="centerCrop"
+            app:imageInt="@{itemData.imgUrl}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"/>
@@ -37,18 +38,18 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="60dp"
             android:text="@{itemData.title}"
-            android:textColor="@color/text_light_dark"
-            android:textSize="@dimen/text_size_18_dp"
+            android:textColor="@color/common_color_2a2827"
+            android:textSize="@dimen/common_text_size_16_dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/meListClickIv"
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="6dp"
+            android:layout_height="10dp"
             android:layout_marginRight="20dp"
-            android:background="@color/basic_color_placeholder"
+            android:src="@drawable/icon_right_more"
             android:visibility="@{itemData.show? View.VISIBLE : View.GONE}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"

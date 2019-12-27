@@ -163,8 +163,8 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
 
 
     private fun handleStatusBar() {
-        setStatusBarColor(resources.getColor(R.color.baseColorAccent))
-        setStatusBarIcon(false)
+        setStatusBarColor(resources.getColor(R.color.common_white))
+        setStatusBarIcon(true)
     }
 
     /**

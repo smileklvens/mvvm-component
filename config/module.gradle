@@ -90,6 +90,7 @@ dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
     //    基础模块
     api project(path: ':libmvi')
+    api project(path: ':libutils')
     //    业务交互模块
     api project(path: ':providerservice')
     kapt 'com.alibaba:arouter-compiler:1.2.2'

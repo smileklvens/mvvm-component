@@ -4,7 +4,7 @@ apply {
 
 android {
     //统一资源前缀，规范资源引用
-    resourcePrefix "mvi"
+//    resourcePrefix "mvi"
 }
 
 dependencies {
@@ -24,8 +24,6 @@ dependencies {
     api 'androidx.multidex:multidex:2.0.1'
     api 'com.ikang.libglide:libglide:1.1.2'
     api 'com.ikang.libeasyshow:lib.easyshow:1.0.4'
-    api "org.jetbrains.anko:anko-commons:$anko_version"
 
     implementation project(path: ':providerservice')
-
 }

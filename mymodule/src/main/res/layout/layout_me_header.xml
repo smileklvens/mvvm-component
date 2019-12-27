@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ResourceName">
 
     <data>
 
@@ -15,15 +17,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="15dp"
+        android:background="@color/common_white"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/meHeaderIv"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:background="@color/basic_color_placeholder"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="12dp"
+            android:background="@color/common_color_placeholder"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,10 +36,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="4dp"
             android:text="杨峰"
-            android:textColor="@color/text_light_dark"
-            android:textSize="@dimen/text_size_20_dp"
+            android:textStyle="bold"
+            android:textColor="@color/common_text_232126"
+            android:textSize="@dimen/common_text_size_20_dp"
             app:layout_constraintLeft_toRightOf="@+id/meHeaderIv"
             app:layout_constraintTop_toTopOf="@+id/meHeaderIv" />
 
@@ -44,71 +49,37 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/btn_gray_hollow_corner"
+            android:layout_marginTop="8dp"
             android:text="产品经理"
-            android:textColor="@color/text_light_dark"
-            android:textSize="@dimen/text_size_16_dp"
+            android:textColor="@color/common_text_808080"
+            android:textSize="@dimen/common_text_size_12_dp"
             app:layout_constraintLeft_toRightOf="@+id/meHeaderIv"
             app:layout_constraintTop_toBottomOf="@+id/meHeaderNameTv" />
 
         <View
-            android:id="@+id/meHeaderLineView"
+            android:id="@+id/meHeaderShadow"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginTop="20dp"
-            android:background="@color/basic_line"
-            app:layout_constraintTop_toBottomOf="@+id/meHeaderIv" />
+            android:layout_height="22dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/icon_horizontal_shadow"
+            app:layout_constraintTop_toBottomOf="@+id/meHeaderIv"
+            app:layout_constraintStart_toStartOf="parent"
+            />
 
         <TextView
-            android:id="@+id/meHeaderBottom1"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:text="年假\n100"
-            android:textColor="@color/text_light_dark"
-            android:textSize="@dimen/text_size_16_dp"
-            app:layout_constraintDimensionRatio="h,258:106"
-            app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/meHeaderBottom2"
-            app:layout_constraintTop_toBottomOf="@+id/meHeaderLineView" />
-
-        <TextView
-            android:id="@+id/meHeaderBottom2"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:text="年假\n100"
-            android:textColor="@color/text_light_dark"
-            android:textSize="@dimen/text_size_16_dp"
-            app:layout_constraintBottom_toBottomOf="@+id/meHeaderBottom1"
-            app:layout_constraintDimensionRatio="h,258:106"
-            app:layout_constraintLeft_toRightOf="@id/meHeaderBottom1"
-            app:layout_constraintRight_toLeftOf="@id/meHeaderBottom3"
-            app:layout_constraintTop_toTopOf="@+id/meHeaderBottom1" />
-
-        <TextView
-            android:id="@+id/meHeaderBottom3"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:gravity="center"
-            android:text="年假\n100"
-            android:textColor="@color/text_light_dark"
-            android:textSize="@dimen/text_size_16_dp"
-            app:layout_constraintBottom_toBottomOf="@+id/meHeaderBottom1"
-            app:layout_constraintDimensionRatio="h,258:106"
-            app:layout_constraintLeft_toRightOf="@+id/meHeaderBottom2"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/meHeaderBottom1" />
-
-        <View
-            android:id="@+id/meHeaderLineView2"
             android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/basic_line"
-            app:layout_constraintTop_toBottomOf="@+id/meHeaderBottom1" />
-
+            android:layout_height="48dp"
+            android:text="@string/me_common_tools"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="16dp"
+            android:textStyle="bold"
+            android:layout_marginTop="23dp"
+            android:background="@color/common_white"
+            android:textSize="@dimen/common_text_size_17_dp"
+            android:textColor="@color/common_text_222222"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/meHeaderIv"
+            />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 

@@ -3,7 +3,7 @@
     <item android:id="@android:id/background">
         <shape>
             <!--<corners android:radius="5dp" />-->
-            <solid android:color="@color/basic_color_e1e0df" />
+            <solid android:color="@color/common_color_e1e0df" />
         </shape>
     </item>
 
@@ -22,7 +22,7 @@
                 <!--<corners android:radius="5dp" />-->
                 <!--<solid android:color="@color/basic_color_83817e" />-->
 
-                <solid android:color="@color/basic_color_2a2827" />
+                <solid android:color="@color/common_color_2a2827" />
                 <!--<stroke-->
                     <!--android:width="0.5dp"-->
                     <!--android:color="@color/basic_color_2a2827" />-->

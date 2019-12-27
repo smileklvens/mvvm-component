@@ -79,8 +79,8 @@ public class ProgressX5WebView extends FrameLayout {
         mProgressBar = view.findViewById(R.id.webProgress);
         addView(view);
         mProgressBar.setColor(
-                ContextCompat.getColor(BaseApp.Companion.getInstance(), R.color.basic_color_ea5504),
-                ContextCompat.getColor(BaseApp.Companion.getInstance(), R.color.basic_color_ea5504));
+                ContextCompat.getColor(BaseApp.Companion.getInstance(), R.color.common_color_ea5504),
+                ContextCompat.getColor(BaseApp.Companion.getInstance(), R.color.common_color_ea5504));
         mProgressBar.show();
 
         webView.getX5WebChromeClient().setWebListener(interWebListener);

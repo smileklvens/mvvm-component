@@ -100,7 +100,7 @@ class EdittextClearCombination @JvmOverloads constructor(
                 //显示密码
                 etInput.transformationMethod = HideReturnsTransformationMethod.getInstance()
 //                ivEye.setImageResource(R.drawable.icon_base_eye_open_1)
-                ivEye.background = resources.getDrawable(R.color.basic_color_placeholder)
+                ivEye.background = resources.getDrawable(R.color.common_color_placeholder)
             } else {
                 //隐藏密码
                 etInput.transformationMethod = PasswordTransformationMethod.getInstance()

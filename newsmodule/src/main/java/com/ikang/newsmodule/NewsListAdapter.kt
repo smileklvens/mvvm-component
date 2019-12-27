@@ -6,16 +6,16 @@ import androidx.databinding.DataBindingUtil
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.example.newsmodule.R
 import com.example.newsmodule.databinding.NewsItemNewsListAdapterBinding
-import com.ikang.data.entity.NewsListBean
+import com.ikang.data.entity.NewsListItemBean
 import com.ikang.libmvi.base.ui.BaseDBViewHoder
 
 /**
  * @author ikang-renwei
- * @Date 2019/12/23 17:50
+ * @Date 2019/12/25 10:47
  * @describe
  */
-class NewsListAdapter : BaseQuickAdapter<NewsListBean, BaseDBViewHoder<NewsItemNewsListAdapterBinding>>(R.layout.news_item_news_list_adapter) {
-    override fun convert(helper: BaseDBViewHoder<NewsItemNewsListAdapterBinding>?, item: NewsListBean?) {
+class NewsListAdapter : BaseQuickAdapter<NewsListItemBean, BaseDBViewHoder<NewsItemNewsListAdapterBinding>>(R.layout.news_item_news_list_adapter) {
+    override fun convert(helper: BaseDBViewHoder<NewsItemNewsListAdapterBinding>?, item: NewsListItemBean?) {
         helper?.getBinding()?.itemData = item
         helper?.getBinding()?.executePendingBindings()
     }

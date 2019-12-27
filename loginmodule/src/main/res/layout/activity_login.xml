@@ -26,7 +26,7 @@
                     android:id="@+id/loginIconIv"
                     android:layout_width="108dp"
                     android:layout_height="108dp"
-                    android:background="@color/basic_color_placeholder"
+                    android:background="@color/common_color_placeholder"
                     android:layout_marginTop="88dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

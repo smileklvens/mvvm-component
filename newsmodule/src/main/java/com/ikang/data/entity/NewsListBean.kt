@@ -6,8 +6,14 @@ package com.ikang.data.entity
  * @describe
  */
 data class NewsListBean(
-    val content: String,
-    val imgUrl: String,
-    val newsNumber: String,
-    val nickname: String
+        val curPage: Int,
+        val datas: List<NewsListItemBean>
+)
+
+data class NewsListItemBean(
+        val imgUrl: String,
+        val newsNumber: String,
+        val nickname: String,
+        val content: String,
+        val time: String
 )

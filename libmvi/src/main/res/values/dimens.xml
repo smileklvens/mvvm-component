@@ -14,17 +14,25 @@
     <dimen name="common_padding_small">5dp</dimen>
     <dimen name="common_radius">6dp</dimen>
     <dimen name="common_border_size">1px</dimen>
-    <dimen name="text_small_size">12sp</dimen>
-    <dimen name="text_middle_size">14sp</dimen>
-    <dimen name="text_big_size">16sp</dimen>
-    <dimen name="text_large_size">18sp</dimen>
+    <dimen name="common_text_small_size">12sp</dimen>
+    <dimen name="common_text_middle_size">14sp</dimen>
+    <dimen name="common_text_big_size">16sp</dimen>
+    <dimen name="common_text_large_size">18sp</dimen>
 
-    <dimen name="dialog_width">120dp</dimen>
+    <dimen name="common_title_bar_height">44dp</dimen>
+
+    <dimen name="common_dialog_width">120dp</dimen>
 
     <!--文字尺寸-->
-    <dimen name="text_size_10_dp">10dp</dimen>
-    <dimen name="text_size_12_dp">12dp</dimen>
-    <dimen name="text_size_16_dp">16dp</dimen>
-    <dimen name="text_size_18_dp">18dp</dimen>
-    <dimen name="text_size_20_dp">20dp</dimen>
+    <dimen name="common_text_size_10_dp">10dp</dimen>
+    <dimen name="common_text_size_11_dp">11dp</dimen>
+    <dimen name="common_text_size_12_dp">12dp</dimen>
+    <dimen name="common_text_size_13_dp">13dp</dimen>
+    <dimen name="common_text_size_14_dp">14dp</dimen>
+    <dimen name="common_text_size_15_dp">15dp</dimen>
+    <dimen name="common_text_size_16_dp">16dp</dimen>
+    <dimen name="common_text_size_17_dp">17dp</dimen>
+    <dimen name="common_text_size_18_dp">18dp</dimen>
+    <dimen name="common_text_size_19_dp">19dp</dimen>
+    <dimen name="common_text_size_20_dp">20dp</dimen>
 </resources>

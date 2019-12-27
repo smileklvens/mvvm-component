@@ -12,8 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginRight="17dp"
-        android:textColor="@color/basic_color_333333"
-        android:textSize="@dimen/text_size_16_dp"
+        android:textColor="@color/common_color_333333"
+        android:textSize="@dimen/common_text_size_16_dp"
         android:visibility="gone" />
 
     <RelativeLayout
@@ -28,7 +28,7 @@
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:layout_centerVertical="true"
-            android:background="@color/basic_color_cccccc"
+            android:background="@color/common_color_cccccc"
             android:layout_marginRight="16dp"
             android:visibility="gone" />
 
@@ -44,9 +44,9 @@
             android:layout_toRightOf="@+id/edittextCearIv"
             android:maxLines="1"
             android:text=""
-            android:textColor="@color/basic_color_333333"
-            android:textColorHint="@color/basic_color_cccccc"
-            android:textSize="@dimen/text_size_16_dp" />
+            android:textColor="@color/common_color_333333"
+            android:textColorHint="@color/common_color_cccccc"
+            android:textSize="@dimen/common_text_size_16_dp" />
 
         <ImageView
             android:id="@+id/ivClear"
@@ -54,7 +54,7 @@
             android:layout_height="14dp"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:background="@color/basic_color_placeholder"
+            android:background="@color/common_color_placeholder"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
             android:visibility="gone" />
@@ -65,7 +65,7 @@
             android:layout_height="14dp"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
-            android:background="@color/basic_color_placeholder"
+            android:background="@color/common_color_placeholder"
             android:visibility="gone" />
 
     </RelativeLayout>

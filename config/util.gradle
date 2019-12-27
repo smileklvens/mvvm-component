@@ -63,7 +63,7 @@ android {
 
 dependencies {
     api fileTree(include: ['*.jar'], dir: 'libs')
-
+    api "org.jetbrains.anko:anko-commons:$anko_version"
 }
 
 

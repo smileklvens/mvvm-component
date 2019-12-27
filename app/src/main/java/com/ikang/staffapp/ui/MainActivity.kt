@@ -12,14 +12,12 @@ import com.airbnb.lottie.LottieAnimationView
 import com.ikang.contacts.ui.ContactsFragmet
 import com.ikang.libmvi.base.NoViewModel
 import com.ikang.libmvi.base.ui.activity.BaseActivity
-import com.ikang.libmvi.util.XLog
 import com.ikang.newsmodule.NewsFragment
 import com.ikang.schedulemodule.ScheduleFragment
 import com.ikang.staffapp.R
 import com.kotlin.mall.ui.fragment.HomeFragment
 import com.kotlin.mall.ui.fragment.MeFragment
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.fragment_login.*
 import java.util.*
 
 
@@ -52,6 +50,9 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>(), View.OnClickL
     override fun layoutId(): Int = R.layout.activity_main
 
     override fun initView(savedInstanceState: Bundle?) {
+
+        setToolBar("", false)
+
         initFragment()
         initPage()
         initBottomNav()
@@ -158,7 +159,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>(), View.OnClickL
     }
 
     fun updateBottomMenuLav(bottomView: LottieAnimationView?) {
-        bottomView?.setImageDrawable(resources.getDrawable(R.color.basic_color_placeholder))
+        bottomView?.setImageDrawable(resources.getDrawable(R.color.common_color_placeholder))
         for (lottie in lottieAnimationViews) {
             if (lottie !== bottomView) {
                 if (lottie == bottomMenuWorkBenchLAV)

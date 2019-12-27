@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <color name="baseColorPrimary">#ffffff</color>
-    <color name="baseColorPrimaryDark">#C2BEBE</color>
-    <color name="baseColorAccent">#D81B60</color>
+    <color name="baseColorPrimary" tools:ignore="ResourceName">#ffffff</color>
+    <color name="baseColorPrimaryDark" tools:ignore="ResourceName">#C2BEBE</color>
+    <color name="baseColorAccent" tools:ignore="ResourceName">#D81B60</color>
 
     <color name="common_main_color">#D81B60</color>
 
@@ -12,27 +12,31 @@
     <color name="common_blue_light">#039be5</color>
     <color name="common_disable">#d9d9d9</color>
     <color name="common_blue">#03a9f4</color>
-    <dimen name="title_bar_height" tools:ignore="ResourceName">44dp</dimen>
 
-    <color name="basic_black">#000000</color>
-    <color name="basic_transparent">#00000000</color>
-    <color name="basic_line">#666666</color>
+    <color name="common_black">#000000</color>
+    <color name="common_transparent">#00000000</color>
+    <color name="common_line">#666666</color>
 
-    <color name="text_dark">#999999</color>
-    <color name="text_light_dark">#333333</color>
-    <color name="text_normal">#666666</color>
+    <color name="common_text_dark">#999999</color>
+    <color name="common_text_light_dark">#333333</color>
+    <color name="common_text_normal">#666666</color>
+    <color name="common_text_special">#aeaeae</color>
+    <color name="common_text_7C320E">#7C320E</color>
+    <color name="common_text_232126">#232126</color>
+    <color name="common_text_808080">#808080</color>
+    <color name="common_text_222222">#222222</color>
 
 
     <!--extra-->
-    <color name="color_f5f5f5">#f5f5f5</color>
-    <color name="basic_color_333333">#333333</color>
-    <color name="basic_color_e3e3e3">#e3e3e3</color>
-    <color name="basic_color_ea5504">#FC7D3D</color>
-    <color name="basic_color_fafafa">#fafafa</color>
+    <color name="common_color_f5f5f5">#f5f5f5</color>
+    <color name="common_color_333333">#333333</color>
+    <color name="common_color_e3e3e3">#e3e3e3</color>
+    <color name="common_color_ea5504">#FC7D3D</color>
+    <color name="common_color_fafafa">#fafafa</color>
 
-    <color name="basic_color_cccccc">#cccccc</color>
+    <color name="common_color_cccccc">#cccccc</color>
     <!--占位背景颜色-->
-    <color name="basic_color_placeholder">#868483</color>
-    <color name="basic_color_e1e0df">#e1e0df</color>
-    <color name="basic_color_2a2827">#2a2827</color>
+    <color name="common_color_placeholder">#868483</color>
+    <color name="common_color_e1e0df">#e1e0df</color>
+    <color name="common_color_2a2827">#2a2827</color>
 </resources>

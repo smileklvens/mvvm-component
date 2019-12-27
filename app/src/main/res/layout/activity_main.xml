@@ -129,7 +129,7 @@
             android:layout_centerHorizontal="true"
             android:text="@string/workbench_workbench"
             android:textColor="@color/text_bottom_ationbar_select"
-            android:textSize="@dimen/text_size_12_dp" />
+            android:textSize="@dimen/common_text_size_12_dp" />
 
     </RelativeLayout>
 

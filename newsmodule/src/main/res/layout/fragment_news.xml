@@ -2,23 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:ignore="ResourceName">
 
-<!--    <com.scwang.smartrefresh.layout.SmartRefreshLayout-->
-<!--        android:id="@+id/newsSmartRefreshLayout"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical">-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:gravity="center"
+        android:textSize="@dimen/common_text_size_18_dp"
+        android:textStyle="bold"
+        android:background="@color/common_white"
+        android:textColor="@color/common_text_light_dark"
+        android:text="消息"/>
 
-<!--        <androidx.recyclerview.widget.RecyclerView-->
-<!--            android:id="@+id/newsRecyclerView"-->
-<!--            style="@style/MatchMatch"-->
-<!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--            app:listitem="@layout/item_article_list" />-->
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/newsSmartRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
 
-<!--    </com.scwang.smartrefresh.layout.SmartRefreshLayout>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/newsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/news_item_news_list_adapter"/>
 
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 </LinearLayout>

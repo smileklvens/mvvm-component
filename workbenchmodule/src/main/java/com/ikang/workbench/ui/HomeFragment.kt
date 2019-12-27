@@ -60,7 +60,7 @@ class HomeFragment : BaseRefreshMoreFragment<HomeViewModel, FragmentHomeBinding>
                 rv_home,
                 mAdapter as BaseQuickAdapter<*, BaseViewHolder>
         )
-        rv_home.addItemDecoration(DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL))
+//        rv_home.addItemDecoration(DividerItemDecoration(requireContext(),DividerItemDecoration.VERTICAL))
 
         mAdapter.apply {
             //banner

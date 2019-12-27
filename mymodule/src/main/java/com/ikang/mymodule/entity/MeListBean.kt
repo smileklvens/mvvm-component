@@ -13,7 +13,7 @@ data class MeListBean(
 )
 
 data class MeListItemBean(
-        val imgUrl: String,
+        val imgUrl: Int,
         val title: String,
         val content: String,
         val isShow: Boolean,

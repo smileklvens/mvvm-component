@@ -9,4 +9,12 @@ object ConfigLog {
 
     /** test log开关  */
     var LOG_OPEN = true
+
+    fun setLogOpen(isOpen: Boolean) {
+        LOG_OPEN = isOpen
+    }
+
+    fun isLogOpen(): Boolean {
+        return LOG_OPEN
+    }
 }
