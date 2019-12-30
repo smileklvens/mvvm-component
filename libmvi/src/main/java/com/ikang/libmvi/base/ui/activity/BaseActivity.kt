@@ -3,7 +3,6 @@ package com.ikang.libmvi.base.ui.activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.widget.Toast
 import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -11,9 +10,9 @@ import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.aleyn.mvvm.event.Message
+import com.alibaba.android.arouter.launcher.ARouter
 import com.ikang.libglide.GlideImageLoader
 import com.ikang.libmvi.R
-import com.ikang.libmvi.base.BaseApp
 import com.ikang.libmvi.base.BaseViewModel
 import com.ikang.libmvi.base.ui.IBaseView
 import com.ikang.libmvi.base.ui.fragment.IKToolbar
@@ -46,6 +45,9 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
         initViewDataBinding()
         //注册 UI事件
         registorDefUIChange()
+        //router自动注入
+        ARouter.getInstance().inject(this)
+
         initView(savedInstanceState)
         initData()
 

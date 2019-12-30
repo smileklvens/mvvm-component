@@ -13,7 +13,7 @@ import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
-open class BaseViewModel : AndroidViewModel(BaseApp.instance as Application), LifecycleObserver {
+open class BaseViewModel : AndroidViewModel(BaseApp.instance ), LifecycleObserver {
 
     val defUI: UIChange by lazy { UIChange() }
 

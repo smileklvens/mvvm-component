@@ -2,9 +2,12 @@ package com.kotlin.mall.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import androidx.databinding.ViewDataBinding
+import androidx.recyclerview.widget.DividerItemDecoration
+import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.BaseViewHolder
 import com.ikang.libmvi.base.ui.fragment.BaseRefreshMoreFragment
@@ -15,6 +18,7 @@ import com.ikang.libmvi.util.XToast
 import com.ikang.libmvi.util.ext.click
 import com.ikang.libmvi.util.ext.observe
 import com.ikang.mymodule.R
+import com.ikang.providerservice.router.service.ILoginService
 import com.ikang.staffapp.ui.fragment.me.MeListAdapter
 import com.ikang.staffapp.ui.fragment.me.MeViewModel
 import com.ikang.staffapp.ui.fragment.me.personalcenter.PersonalCenterActivity
@@ -26,6 +30,9 @@ import kotlinx.android.synthetic.main.layout_me_header.view.*
    一般写法
  */
 class MeFragment : BaseRefreshMoreFragment<MeViewModel, ViewDataBinding>() {
+
+    @Autowired
+    @JvmField var loginService: ILoginService? = null
 
     private val mAdapter by lazy { MeListAdapter() }
     private var page: Int = 0
@@ -46,7 +53,6 @@ class MeFragment : BaseRefreshMoreFragment<MeViewModel, ViewDataBinding>() {
         val inflate = LayoutInflater.from(context).inflate(R.layout.layout_me_header, null, false)
         mAdapter.addHeaderView(inflate)
 
-//        inflate.meHeaderNameTv  = LoginServiceControl.accountService.accountId
 
         inflate.meHeadercl.click {
             val intent = Intent(context, PersonalCenterActivity::class.java)
@@ -65,6 +71,10 @@ class MeFragment : BaseRefreshMoreFragment<MeViewModel, ViewDataBinding>() {
         meSmartRefreshLayout.setEnableRefresh(false)
 
         viewModel.getMeListBean(page)
+
+
+        //        inflate.meHeaderNameTv  = LoginServiceControl.accountService.accountId
+        Log.e("router", (loginService?.accountId))
     }
 
     override fun onItemClick(

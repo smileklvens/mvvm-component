@@ -1,25 +1,22 @@
-package com.ikang.loginmodule
+package com.ikang.loginmodule.arouter
 
 import android.content.Context
+import com.alibaba.android.arouter.facade.annotation.Route
 import com.ikang.providerservice.router.service.ILoginService
-
+import com.ikang.providerservice.router.service.ProviderPath
 
 
 /**
  * @author ikang-zhulk
  * @version 1.0.0
- * @describe {@link #}
+ * @describe {@link #} 组件间通信
  */
+@Route(path = ProviderPath.Provider.LOGIN)
 class LoginServiceRouter : ILoginService {
     override val isLogin: Boolean = true
 
     override val accountId: String = "张三"
-    /**
-     * Do your init work in this method, it well be call when processor has been load.
-     *
-     * @param context ctx
-     */
+
     override fun init(context: Context?) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 }

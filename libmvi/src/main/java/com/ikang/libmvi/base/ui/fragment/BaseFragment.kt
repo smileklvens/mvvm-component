@@ -13,6 +13,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.aleyn.mvvm.event.Message
+import com.alibaba.android.arouter.launcher.ARouter
 import com.ikang.libmvi.base.BaseViewModel
 import com.ikang.libmvi.base.ui.IBaseView
 import com.ikang.libmvi.base.ui.activity.BaseActivity
@@ -60,6 +61,8 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment
         lifecycle.addObserver(viewModel)
         //注册 UI事件
         registorDefUIChange()
+        //router自动注入
+        ARouter.getInstance().inject(this)
         initView(savedInstanceState)
 
     }
