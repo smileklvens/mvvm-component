@@ -12,6 +12,7 @@ import com.airbnb.lottie.LottieAnimationView
 import com.ikang.contacts.ui.ContactsFragmet
 import com.ikang.libmvi.base.NoViewModel
 import com.ikang.libmvi.base.ui.activity.BaseActivity
+import com.ikang.libmvi.util.StatusBarUtil
 import com.ikang.newsmodule.NewsFragment
 import com.ikang.schedulemodule.ScheduleFragment
 import com.ikang.staffapp.R
@@ -56,6 +57,10 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>(), View.OnClickL
         initFragment()
         initPage()
         initBottomNav()
+    }
+
+    override fun setStatusBar() {
+        StatusBarUtil.setTranslucentForImageViewInFragment(this@MainActivity,0, null)
     }
 
     /*

@@ -501,7 +501,7 @@ object StatusBarUtil {
      * @param activity       fragment 对应的 activity
      * @param needOffsetView 需要向下偏移的 View
      */
-    fun setTranslucentForImageViewInFragment(activity: Activity, needOffsetView: View) {
+    fun setTranslucentForImageViewInFragment(activity: Activity, needOffsetView: View?) {
         setTranslucentForImageViewInFragment(activity, DEFAULT_STATUS_BAR_ALPHA, needOffsetView)
     }
 
@@ -511,7 +511,7 @@ object StatusBarUtil {
      * @param activity       fragment 对应的 activity
      * @param needOffsetView 需要向下偏移的 View
      */
-    fun setTransparentForImageViewInFragment(activity: Activity, needOffsetView: View) {
+    fun setTransparentForImageViewInFragment(activity: Activity, needOffsetView: View?) {
         setTranslucentForImageViewInFragment(activity, 0, needOffsetView)
     }
 
@@ -524,7 +524,7 @@ object StatusBarUtil {
      */
     fun setTranslucentForImageViewInFragment(
         activity: Activity, statusBarAlpha: Int,
-        needOffsetView: View
+        needOffsetView: View?
     ) {
         setTranslucentForImageView(activity, statusBarAlpha, needOffsetView)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT && Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {

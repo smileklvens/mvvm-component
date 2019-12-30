@@ -3,7 +3,6 @@ package com.ikang.libmvi.base.ui.activity
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
@@ -16,6 +15,7 @@ import com.ikang.libmvi.R
 import com.ikang.libmvi.base.BaseViewModel
 import com.ikang.libmvi.base.ui.IBaseView
 import com.ikang.libmvi.base.ui.fragment.IKToolbar
+import com.ikang.libmvi.util.RomUtils
 import com.ikang.libmvi.util.StatusBarUtil
 import kotlinx.android.synthetic.main.activity_base.*
 import kotlinx.android.synthetic.main.layout_loading_view.*
@@ -29,7 +29,7 @@ import java.lang.reflect.ParameterizedType
  * @describe Activity父类，所有的activity都应该继承这个
  */
 abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompatActivity(),
-    IBaseView {
+        IBaseView {
 
     //是否第一次加载
     private var isFirst: Boolean = true
@@ -64,7 +64,7 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
      */
     private fun initViewDataBinding() {
         val cls =
-            (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[1] as Class<*>
+                (javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[1] as Class<*>
         if (ViewDataBinding::class.java != cls && ViewDataBinding::class.java.isAssignableFrom(cls)) {
             bindContentView()
         } else {
@@ -86,7 +86,7 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
             val tp = type.actualTypeArguments[0]
             val tClass = tp as? Class<VM> ?: BaseViewModel::class.java
             viewModel =
-                ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(tClass) as VM
+                    ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(tClass) as VM
         }
     }
 
@@ -144,8 +144,8 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
 
 
     protected fun setToolBar(
-        title: CharSequence,
-        hasTitleBar: Boolean = true
+            title: CharSequence,
+            hasTitleBar: Boolean = true
     ) {
         if (hasTitleBar) {
             if (mToolbar == null) {
@@ -164,16 +164,16 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
     }
 
 
-    private fun handleStatusBar() {
-        setStatusBarColor(resources.getColor(R.color.common_white))
+    fun handleStatusBar() {
+        setStatusBar()
         setStatusBarIcon(true)
     }
 
     /**
      * 设置状态栏的背景颜色
      */
-    fun setStatusBarColor(@ColorInt color: Int) {
-        StatusBarUtil.setColor(this, color, 0)
+    open fun setStatusBar() {
+        StatusBarUtil.setColor(this, resources.getColor(R.color.common_white))
     }
 
     /**
@@ -181,12 +181,18 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
      *
      * @param dark true: 黑色  false: 白色
      */
-    fun setStatusBarIcon(dark: Boolean) {
-        if (dark) {
-            StatusBarUtil.setLightMode(this)
+    open fun setStatusBarIcon(dark: Boolean) {
+        if (RomUtils.isSupportStatusBarDarkFont(this)) {
+            if (dark) {
+                StatusBarUtil.setLightMode(this)
+            } else {
+                StatusBarUtil.setDarkMode(this)
+            }
         } else {
-            StatusBarUtil.setDarkMode(this)
+            StatusBarUtil.setTranslucent(this, 66)
+
         }
+
     }
 
     override fun hideLoading() {
