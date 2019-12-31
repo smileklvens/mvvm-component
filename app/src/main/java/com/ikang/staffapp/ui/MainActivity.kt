@@ -60,7 +60,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>(), View.OnClickL
     }
 
     override fun setStatusBar() {
-        StatusBarUtil.setTranslucentForImageViewInFragment(this@MainActivity,0, null)
+        StatusBarUtil.setTranslucentForImageViewInFragment(this@MainActivity, null)
     }
 
     /*

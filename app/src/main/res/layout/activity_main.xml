@@ -24,7 +24,8 @@
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/bottomMenuHomeLav"
-                style="@style/main_ationbar_imageView" />
+                style="@style/main_ationbar_imageView"
+                android:src="@drawable/icon_home_news_normal" />
 
 
             <TextView
@@ -42,6 +43,7 @@
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/bottomMenuNewsLAV"
+                android:src="@drawable/ic_home_schedule_normal"
                 style="@style/main_ationbar_imageView" />
 
 
@@ -68,6 +70,7 @@
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/bottomMenuScheduleLAV"
+                android:src="@drawable/ic_home_contacts_normal"
                 style="@style/main_ationbar_imageView" />
 
 
@@ -87,6 +90,7 @@
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/bottomMenuMeRlLAV"
+                android:src="@drawable/ic_home_me_normal"
                 style="@style/main_ationbar_imageView" />
 
 
