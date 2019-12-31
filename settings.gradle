@@ -1,1 +1,2 @@
-include ':app', ':libmvi', ':loginmodule', ':providerservice', ':mymodule', ':libutils', ':newsmodule', ':schedulemodule', ':contactsmodule', ':workbenchmodule'
+include ':app', ':lib-base', ':provider-service',':lib-utils',
+        ':module-login',  ':module-user', ':module-msg',':module-home'

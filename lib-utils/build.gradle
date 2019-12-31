@@ -1,0 +1,12 @@
+apply {
+    from "${rootDir.path}/config/util.gradle"
+}
+
+android {
+    //统一资源前缀，规范资源引用
+    resourcePrefix "lib_util"
+}
+
+
+dependencies{
+}

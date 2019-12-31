@@ -1,0 +1,19 @@
+apply {
+    from "${rootDir.path}/config/module.gradle"
+}
+
+android {
+    defaultConfig {
+        //如果是独立模块，则使用当前组件的包名-工作台
+        if (isBuildModule.toBoolean()) {
+            applicationId "com.ikang.home"
+        }
+    }
+    //统一资源前缀，规范资源引用
+    resourcePrefix "home"
+}
+
+dependencies {
+    //轮播图
+    api 'com.github.xiaohaibin:XBanner:androidx_v1.0.2'
+}

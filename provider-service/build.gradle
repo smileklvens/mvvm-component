@@ -1,0 +1,14 @@
+apply {
+    from "${rootDir.path}/config/util.gradle"
+}
+
+android {
+    //统一资源前缀，规范资源引用
+    resourcePrefix "service"
+}
+
+
+dependencies {
+    api 'com.alibaba:arouter-api:1.5.0'
+
+}

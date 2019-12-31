@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-
 apply plugin: 'kotlin-noarg'
 apply plugin: 'kotlin-allopen'
 android {
@@ -39,16 +38,16 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':libmvi')
-    implementation project(path: ':providerservice')
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.ashokvarma.android:bottom-navigation-bar:2.0.2'
 
     if (!isBuildModule.toBoolean()) {
-        implementation project(path: ':loginmodule')
-        implementation project(path: ':newsmodule')
-        implementation project(path: ':schedulemodule')
-        implementation project(path: ':workbenchmodule')
-        implementation project(path: ':contactsmodule')
-        implementation project(path: ':mymodule')
+        implementation project(path: ':module-login')
+        implementation project(path: ':module-user')
+        implementation project(path: ':module-msg')
+        implementation project(path: ':module-home')
+    } else {
+        implementation project(path: ':lib-base')
     }
 }
 
