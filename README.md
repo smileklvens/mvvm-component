@@ -2,14 +2,15 @@
 
 项目整体采用：
 
-该项目是由kotlin、androidx、viewmodule、mvvm、arouter 协程整合，旨在帮助开发者快速搭建项目，敏捷开发采用：
+该项目是由kotlin、androidx、协程、组件化整合，旨在帮助开发者快速搭建项目，敏捷开发：
 
 
 1. 网络请求采用协程+retrofit 
 2. 采用viewmodule和databing 
 3. 编写基类activity实现了统一处理toolbar、dialog和异常的toast。
 4. 一些常用kotlin的扩展
-  
+5. mvvm + arouter 组件化
+   
 ----------
 
 # android 组件化
@@ -18,9 +19,10 @@
 
 ### 首先我们看下整体结构
 
-![组件化](C:\Users\Administrator\Desktop\组件化.png)
+![代码结构](https://github.com/smileklvens/mvvm-component/blob/master/img/%E7%BB%84%E4%BB%B6%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84.png)
+![组件化](https://github.com/smileklvens/mvvm-component/blob/master/img/%E7%BB%84%E4%BB%B6%E5%8C%96.png)
 
-说明：app是壳工程，下面是业务模块分别有login，my等模块，业务模块都依赖libmvi基础库，
+说明：app是壳工程，在往下是业务模块（登录，消息，用户），都依赖lib-base基础库和按需依赖util模块,provider-service模块用于组件通信和application生命周期分发。
 
 基础库里面有业务组件都会用到的功能比如:基础类、glide、retrofit等，有些组价用到，有些用不到的工具模块，单独抽成工具模块比如libutil，libshare，可被组件按需依赖。
 
@@ -242,6 +244,7 @@ class LoginServiceRouter : ILoginService {
 
 ```
 
+
 具体详见代码
 
 # 感谢 
@@ -249,4 +252,4 @@ class LoginServiceRouter : ILoginService {
 [SmartTabLayout](https://github.com/smileklvens/SmartTabLayout)
 
 [BaseRecyclerViewAdapterHelper](https://github.com/CymChad/BaseRecyclerViewAdapterHelper)
-此项目参考了众多优秀的开源MVVM项目的优秀思想，整合了很多别人的代码，在此一并表示感谢。
+此项目参考了众多优秀开源项目的优秀思想，整合了很多别人的代码，在此一并表示感谢。
