@@ -42,7 +42,7 @@ object RetrofitFactory {
     /**
      * 获取 OkHttpClient
      */
-    private fun getOkHttpClient(interceptor: Interceptor? = null, useSSL: Boolean = true): OkHttpClient {
+    private fun getOkHttpClient(interceptor: Interceptor? = null, useSSL: Boolean = false): OkHttpClient {
         val builder = OkHttpClient().newBuilder()
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         if (BuildConfig.DEBUG) {

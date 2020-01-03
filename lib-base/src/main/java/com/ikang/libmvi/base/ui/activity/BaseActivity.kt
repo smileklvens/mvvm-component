@@ -173,7 +173,7 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
      * 设置状态栏的背景颜色
      */
     open fun setStatusBar() {
-        StatusBarUtil.setColor(this, resources.getColor(R.color.common_white))
+        StatusBarUtil.setColor(this, resources.getColor(R.color.common_white),0)
     }
 
     /**

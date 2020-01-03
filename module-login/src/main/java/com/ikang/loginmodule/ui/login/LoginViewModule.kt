@@ -19,7 +19,7 @@ class LoginViewModule : BaseViewModel() {
         RetrofitFactory.getService(
                 ApiService::class.java,
                 BASE_URL,
-                IKGlobalIntercept(),true
+                IKGlobalIntercept()
         )
     }
 
