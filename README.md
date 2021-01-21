@@ -247,6 +247,61 @@ class LoginServiceRouter : ILoginService {
 
 具体详见代码
 
+### 3、进一步插件化
+
+**插件化要解决的三个核心问题：1类加载、2资源加载、3组件生命周期管理。**
+
+* 加载插件代码
+
+  平时编我们写的无论是java、kotlin还是Groovy，最终都会被编译成字节码，然后通过类加载器加载到内存中，在andorid平台多了一个.class悠优化为 .dex过程。
+
+下图
+
+<img src="/Users/zhuleike1/Library/Application Support/typora-user-images/image-20210121094122749.png" style="zoom:80%;" />
+
+android中加载一个类到内存中也是使用双亲委托机制，在 Android 虚拟机里是无法直接运行 .class 文件的，Android 会将所有的 .class 文件转换成一个 .dex 文件，并且 Android 将加载 .dex 文件的实现封装在 BaseDexClassLoader 中，而我们一般只使用它的两个子类：PathClassLoader 和 DexClassLoader。
+
+PathClassLoade 只能加载已经安装应用的 dex 或 apk 文件，DexClassLoader 则没有此限制，可以从 SD 卡上加载包含 class.dex 的 .jar 和 .apk 文件，这也是插件化和热修复的基础，在不需要安装应用的情况下，完成需要使用的 dex 的加载。
+
+``` 
+//1、构造 DexClassLoade
+ClassLoader classLoader = new DexClassLoader(dexPath, cachDexPath, solib, getClassLoader());
+//2、调用方法
+classLoader mLoadClassBean = classLoader.loadClass("com.jd.plugin.Bean");
+        Object beanObject = mLoadClassBean.newInstance();
+        Method getNameMethod = mLoadClassBean.getMethod("getName");
+        getNameMethod.setAccessible(true);
+        String name = (String) getNameMethod.invoke(beanObject);
+
+```
+
+* 加载插件资源
+
+  Android里面说资源(除了代码)一般分为两类，一类是在/res目录，一类是在/assets目录。/res目录下的资源会在编译的时候通过aapt工具在项目R类中生成对应的资源ID，通过`resources.arsc`文件就能映射到对应资源，/res目录下可以包括/drawable图像资源，/layout布局资源，/mipmap启动器图标，/values字符串颜色style等资源。而/assets目录下会保存原始文件名和文件层次结构，以原始形式保存任意文件，但是这些文件没有资源ID，只能使用`AssetManager`读取这些文件。
+
+<img src="/Users/zhuleike1/Library/Application Support/typora-user-images/image-20210121114248540.png" alt="image-20210121114248540" style="zoom:80%;" />
+
+
+
+把插件apk的路径添加到`addAssetPath`中，构造对应的Resources，那么就可以拿到插件里面res目录下的资源了。
+
+```    java
+ public static void addAssetPath(Context context, String apkName) {
+   ...省略部分代码...
+            AssetManager assetManager = AssetManager.class.newInstance();
+            Method addAssetPath = assetManager.getClass().getDeclaredMethod("addAssetPath", String.class);
+            addAssetPath.invoke(assetManager, pluginInfos.get(apkName).getDexPath());
+            sAssetManager = assetManager;
+            sResources = new Resources(assetManager,
+                    context.getResources().getDisplayMetrics(),
+                    context.getResources().getConfiguration()); 
+   
+         CharSequence res = assetManager.getResourceText(id);
+    }
+
+```
+
+* 
 # 感谢 
 
 [SmartTabLayout](https://github.com/smileklvens/SmartTabLayout)
