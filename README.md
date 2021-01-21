@@ -241,13 +241,14 @@ class LoginServiceRouter : ILoginService {
 2、如果界面逻辑复杂需要自定义ViewModel：BaseViewModel()，
 详见 LoginFragment : BaseRefreshFragment<LoginViewModule,FragmentLoginBinding>() 
 
+3、 自定义BindingAdapter详见 ViewBindingAdapters xml一句话加载网络图片和 打开链接
 
 ```
 
 
 具体详见代码
 
-### 3、进一步插件化
+# 进一步插件化（todo）
 
 **插件化要解决的三个核心问题：1类加载、2资源加载、3组件生命周期管理。**
 
@@ -257,7 +258,8 @@ class LoginServiceRouter : ILoginService {
 
 下图
 
-<img src="/Users/zhuleike1/Library/Application Support/typora-user-images/image-20210121094122749.png" style="zoom:80%;" />
+![编译](https://github.com/smileklvens/mvvm-component/blob/master/img/compile.png)
+
 
 android中加载一个类到内存中也是使用双亲委托机制，在 Android 虚拟机里是无法直接运行 .class 文件的，Android 会将所有的 .class 文件转换成一个 .dex 文件，并且 Android 将加载 .dex 文件的实现封装在 BaseDexClassLoader 中，而我们一般只使用它的两个子类：PathClassLoader 和 DexClassLoader。
 
@@ -279,7 +281,8 @@ classLoader mLoadClassBean = classLoader.loadClass("com.jd.plugin.Bean");
 
   Android里面说资源(除了代码)一般分为两类，一类是在/res目录，一类是在/assets目录。/res目录下的资源会在编译的时候通过aapt工具在项目R类中生成对应的资源ID，通过`resources.arsc`文件就能映射到对应资源，/res目录下可以包括/drawable图像资源，/layout布局资源，/mipmap启动器图标，/values字符串颜色style等资源。而/assets目录下会保存原始文件名和文件层次结构，以原始形式保存任意文件，但是这些文件没有资源ID，只能使用`AssetManager`读取这些文件。
 
-<img src="/Users/zhuleike1/Library/Application Support/typora-user-images/image-20210121114248540.png" alt="image-20210121114248540" style="zoom:80%;" />
+![资源](https://github.com/smileklvens/mvvm-component/blob/master/img/resource.png)
+
 
 
 

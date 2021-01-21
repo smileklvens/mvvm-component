@@ -71,28 +71,9 @@ ext {
 
 
 def addRepos(RepositoryHandler handler) {
-    /*ikang私有仓库*/
     handler.maven {
-        credentials {
-            username = 'admin'
-            password = 'admin123'
-        }
-        url "http://nexus.ikang.com/content/repositories/Android/"
+        url 'https://maven.aliyun.com/repository/public/'
     }
-
-    handler.maven {
-        url 'https://maven.aliyun.com/repository/jcenter'
-        name '代替 jcenter()'
-    }
-    handler.maven {
-        url 'https://maven.aliyun.com/repository/google'
-        name '代替 google()'
-    }
-    handler.maven { url 'https://dl.bintray.com/umsdk/release' }
-
-    /*有赞私服*/
-    handler.maven { url 'https://dl.bintray.com/youzanyun/maven/' }
-
     handler.maven { url "https://jitpack.io" }
 
     handler.google()
